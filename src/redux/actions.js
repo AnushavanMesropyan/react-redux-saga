@@ -1,4 +1,4 @@
-import {CREATE_POST, FETCH_POST, HIDE_LOADER, HIDE_MESSAGE, SHOW_LOADER, SHOW_MESSAGE} from "./types";
+import {CREATE_POST, FETCH_POST, HIDE_LOADER, HIDE_MESSAGE, REQUEST_POSTS, SHOW_LOADER, SHOW_MESSAGE} from "./types";
 
 export function createPost(post) {
     return {
@@ -38,7 +38,10 @@ export function hideMessage() {
 }
 
 export function fetchPost() {
-    return async dispatch => {
+    return {
+        type:REQUEST_POSTS
+    }
+   /* return async dispatch => {
 
         try {
             dispatch(showLoader());
@@ -54,6 +57,6 @@ export function fetchPost() {
         dispatch(showMessage('Server problem'));
             dispatch(hideLoader());
     }
-    }
+    }*/
 
 }
